@@ -1,0 +1,12 @@
+.*.sw[po]
+*.[ao]
+*.lst
+*.lss
+*.elf
+*.hex
+*.bin
+*.map
+*.sym
+tags
+.dep
+

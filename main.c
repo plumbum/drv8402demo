@@ -30,10 +30,10 @@ int main(void)
     pwmRun(0, 0, 0);
     enableIRQFIQ();
 
-    int speed = 1000;
+    int speed = 10;
     for(;;)
     {
-        if(speed < 33000)
+        if(speed < 30000)
         {
             pwmSetSpeed(speed);
             if(speed < 4000)
@@ -54,7 +54,7 @@ int main(void)
         if(d>1200) d-=1;
             else LED_ON();
         */
-        //tProcess();
+        tProcess();
         
     }
 

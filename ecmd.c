@@ -17,13 +17,27 @@ typedef struct {
 
 const ecmds_t ecmds[] = {
     { "HELP",       ecmdHelp,   "This help" },
+    { "STOP",       ecmdStop,   "Stop motor" },
+    { "SPEED",       ecmdSpeed,   "Set speed, start motor. <speed_rpm>" },
     // { "TIME",       ecmdTime,   "Read current time" },
     // { "SETIME",     ecmdSetime, "Set new time [YY/MM/DD HH:MM:SS]" },
 };
 
-int ecmdHelp(char* pch)
+int ecmdStop(char* str)
 {
-    (void)pch;
+    (void)str;
+    return 200;
+}
+
+int ecmdSpeed(char* str)
+{
+    (void)str;
+    return 200;
+}
+
+int ecmdHelp(char* str)
+{
+    (void)str;
     unsigned int i;
     tPutsLn("About commans");
     for(i=0; i<(sizeof(ecmds)/sizeof(ecmds[0])); i++)
@@ -36,9 +50,9 @@ int ecmdHelp(char* pch)
     return 200;
 }
 
-int ecmdTime(char* pch)
+int ecmdTime(char* str)
 {
-    (void)pch;
+    (void)str;
     tPuts("System time: ");
     /*
     time_t tm = 0; // rtcGetCounter();
